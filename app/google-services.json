@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "199102674978",
+    "firebase_url": "https://tk-news.firebaseio.com",
+    "project_id": "tk-news",
+    "storage_bucket": "tk-news.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199102674978:android:2076db910268c06d",
+        "android_client_info": {
+          "package_name": "tkhub.project.tknews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "199102674978-etpvochk0taajpk48s464gd7is99m8kd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS4_82kpFGvkQL7u_BaTpxeOUNh1_QNsY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199102674978:android:87350c478bd9127e",
+        "android_client_info": {
+          "package_name": "tknews.project.tkhub.tknews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "199102674978-k8s1qpabqvled705a73r4l9fctvm0uck.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tknews.project.tkhub.tknews",
+            "certificate_hash": "1a5f78efd2d31bb2ca78182d46fecf03963d7a32"
+          }
+        },
+        {
+          "client_id": "199102674978-etpvochk0taajpk48s464gd7is99m8kd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS4_82kpFGvkQL7u_BaTpxeOUNh1_QNsY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "199102674978-etpvochk0taajpk48s464gd7is99m8kd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
