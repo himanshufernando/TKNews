@@ -26,7 +26,8 @@ public class Cobert extends TextView {
 
     private void init() {
         Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/Corbert-Regular.otf");
-        setTypeface(tf);
+
+        setTypeface(tf,Typeface.BOLD);
     }
 
 }

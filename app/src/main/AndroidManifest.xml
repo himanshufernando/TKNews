@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="tknews.project.tkhub.tknews">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".TKNews"
         android:allowBackup="true"
