@@ -62,7 +62,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         holder.txtNewsLikeCount.setText(newsList.get(position).getNewsLikeCount());
 
         if(newsList.get(position).getLanguageStatus()==0){
-            holder.txtNewsTitel.setText(newsList.get(position).getNewsTitelSinhala());
+           holder.txtNewsTitel.setText(newsList.get(position).getNewsTitelSinhala());
         }else {
             holder.txtNewsTitel.setText(newsList.get(position).getNewsTitelEnglish());
         }

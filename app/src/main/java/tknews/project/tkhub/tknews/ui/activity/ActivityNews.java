@@ -38,6 +38,7 @@ public class ActivityNews extends Activity {
     NewsAdapter newsAdapter;
     ArrayList<News> newsArrayList = new ArrayList<News>();
     int languageStatus = 0;
+    DataSnapshot dataSnapshotGlobal;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,12 +61,8 @@ public class ActivityNews extends Activity {
             myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds : dataSnapshot.getChildren()){
-                    News newsInfo =ds.getValue(News.class);
-                    newsArrayList.add(new News(ds.getKey(),newsInfo.newsTitelEnglish,newsInfo.newsTitelSinhala,newsInfo.newsContentEnglish, newsInfo.newsContentSinhala,newsInfo.newsResourceID,newsInfo.newsDate,newsInfo.newsLikeCount,newsInfo.newsCoverImage,languageStatus));
-
-                }
-                recyclerNews.setAdapter(newsAdapter);
+                dataSnapshotGlobal =dataSnapshot;
+                loadNews();
 
             }
             @Override
@@ -78,9 +75,26 @@ public class ActivityNews extends Activity {
     @OnClick(R.id.relativeLayout_tab_sinhala)
     public void tabSinhalaOnClick() {
         languageStatus =0;
+        loadNews();
     }
     @OnClick(R.id.relativeLayout_tab_english)
     public void tabEnglishOnClick() {
         languageStatus =1;
+        loadNews();
+    }
+
+    private void loadNews(){
+
+        for(DataSnapshot ds : dataSnapshotGlobal.getChildren()){
+            News newsInfo =ds.getValue(News.class);
+            newsArrayList.clear();
+            if(newsInfo.newsStatus==0){
+
+            }else {
+                newsArrayList.add(new News(ds.getKey(),newsInfo.newsTitelEnglish,newsInfo.newsTitelSinhala,newsInfo.newsContentEnglish, newsInfo.newsContentSinhala,newsInfo.newsResourceID,newsInfo.newsDate,newsInfo.newsLikeCount,newsInfo.newsCoverImage,languageStatus,newsInfo.newsStatus));
+            }
+
+        }
+        recyclerNews.setAdapter(newsAdapter);
     }
 }

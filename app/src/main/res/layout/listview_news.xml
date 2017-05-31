@@ -74,14 +74,14 @@
                 android:textAppearance="@android:style/TextAppearance.Small"
                 android:textColor="@android:color/black" />
 
-            <tknews.project.tkhub.tknews.ui.font.FontSinhala
+            <tknews.project.tkhub.tknews.ui.font.Cobert
                 android:id="@+id/textView_listnews_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/textView_listnews_date"
                 android:layout_alignLeft="@+id/textView_listnews_date"
                 android:layout_alignStart="@+id/textView_listnews_date"
-                android:text="TextView sdsssdaaaasas"
+                android:text="සෆේස් ප්‍රොරො"
                 android:textAppearance="@android:style/TextAppearance.Large"
                 android:textColor="@android:color/black" />
 

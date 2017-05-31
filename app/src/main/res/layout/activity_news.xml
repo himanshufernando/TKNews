@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -116,35 +115,47 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relativeLayout5"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@color/appDrakYellow"
-        android:id="@+id/relativeLayout5">
+        android:background="@color/appDrakYellow">
 
     </RelativeLayout>
 
 
+    <com.comix.overwatch.HiveProgressView
+        android:id="@+id/hiveProgressView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        app:hive_animDuration="5000"
+        app:hive_color="@color/appBrowun"
+        app:hive_cornerRadius="20"
+        app:hive_maxAlpha="255"
+        app:hive_rainbow="false"
+        app:hive_shrink="true" />
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/swiperefresh_news"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/relativeLayout5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/relativeLayout3"
-        android:layout_above="@+id/relativeLayout5">
+        android:layout_below="@+id/relativeLayout3">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView_news"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
+            android:layout_alignParentStart="true"
+            android:visibility="visible" />
 
 
     </android.support.v4.widget.SwipeRefreshLayout>

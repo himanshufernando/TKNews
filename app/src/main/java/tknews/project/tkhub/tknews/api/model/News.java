@@ -7,11 +7,11 @@ package tknews.project.tkhub.tknews.api.model;
 public class News {
 
     public String newsID,newsTitelEnglish,newsTitelSinhala,newsContentEnglish,newsContentSinhala,newsResourceID,newsDate,newsLikeCount,newsCoverImage;
-    public int languageStatus;
+    public int languageStatus,newsStatus;
     public News() {
     }
 
-    public News(String newsID, String newsTitelEnglish, String newsTitelSinhala, String newsContentEnglish, String newsContentSinhala, String newsResourceID, String newsDate, String newsLikeCount, String newsCoverImage,int languageStatus) {
+    public News(String newsID, String newsTitelEnglish, String newsTitelSinhala, String newsContentEnglish, String newsContentSinhala, String newsResourceID, String newsDate, String newsLikeCount, String newsCoverImage,int languageStatus,int newsStatus) {
         this.newsID = newsID;
         this.newsTitelEnglish = newsTitelEnglish;
         this.newsTitelSinhala = newsTitelSinhala;
@@ -22,6 +22,15 @@ public class News {
         this.newsLikeCount = newsLikeCount;
         this.newsCoverImage = newsCoverImage;
         this.languageStatus = languageStatus;
+        this.newsStatus =newsStatus;
+    }
+
+    public int getNewsStatus() {
+        return newsStatus;
+    }
+
+    public void setNewsStatus(int newsStatus) {
+        this.newsStatus = newsStatus;
     }
 
     public int getLanguageStatus() {
