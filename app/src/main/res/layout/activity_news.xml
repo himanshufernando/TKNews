@@ -126,20 +126,6 @@
     </RelativeLayout>
 
 
-    <com.comix.overwatch.HiveProgressView
-        android:id="@+id/hiveProgressView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_gravity="center"
-        app:hive_animDuration="5000"
-        app:hive_color="@color/appBrowun"
-        app:hive_cornerRadius="20"
-        app:hive_maxAlpha="255"
-        app:hive_rainbow="false"
-        app:hive_shrink="true" />
-
     <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/swiperefresh_news"
         android:layout_width="match_parent"
@@ -159,6 +145,20 @@
 
 
     </android.support.v4.widget.SwipeRefreshLayout>
+
+    <com.comix.overwatch.HiveProgressView
+        android:id="@+id/hiveProgressView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        app:hive_animDuration="5000"
+        app:hive_color="@color/appBrowun"
+        app:hive_cornerRadius="20"
+        app:hive_maxAlpha="255"
+        app:hive_rainbow="false"
+        app:hive_shrink="true" />
 
 
 </RelativeLayout>

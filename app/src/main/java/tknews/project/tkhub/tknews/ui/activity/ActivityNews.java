@@ -7,8 +7,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.comix.overwatch.HiveProgressView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,6 +35,9 @@ public class ActivityNews extends Activity {
 
 
     @BindView(R.id.recyclerView_news) RecyclerView recyclerNews;
+    @BindView(R.id.hiveProgressView) HiveProgressView hiveProgressView;
+
+
 
 
     NewsAdapter newsAdapter;
@@ -54,7 +59,7 @@ public class ActivityNews extends Activity {
 
         newsAdapter = new NewsAdapter(this,newsArrayList);
 
-
+        hiveProgressView.setVisibility(View.VISIBLE);
 
 
 
@@ -74,11 +79,13 @@ public class ActivityNews extends Activity {
     }
     @OnClick(R.id.relativeLayout_tab_sinhala)
     public void tabSinhalaOnClick() {
+        hiveProgressView.setVisibility(View.VISIBLE);
         languageStatus =0;
         loadNews();
     }
     @OnClick(R.id.relativeLayout_tab_english)
     public void tabEnglishOnClick() {
+        hiveProgressView.setVisibility(View.VISIBLE);
         languageStatus =1;
         loadNews();
     }
@@ -93,6 +100,7 @@ public class ActivityNews extends Activity {
             }else {
                 newsArrayList.add(new News(ds.getKey(),newsInfo.newsTitelEnglish,newsInfo.newsTitelSinhala,newsInfo.newsContentEnglish, newsInfo.newsContentSinhala,newsInfo.newsResourceID,newsInfo.newsDate,newsInfo.newsLikeCount,newsInfo.newsCoverImage,languageStatus,newsInfo.newsStatus));
             }
+            hiveProgressView.setVisibility(View.INVISIBLE);
 
         }
         recyclerNews.setAdapter(newsAdapter);
