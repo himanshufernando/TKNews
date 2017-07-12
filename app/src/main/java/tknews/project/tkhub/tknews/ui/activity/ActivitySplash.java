@@ -18,48 +18,25 @@ import tknews.project.tkhub.tknews.R;
  * Created by Himanshu on 3/7/2017.
  */
 
-public class ActivitySplash extends Activity implements Animation.AnimationListener{
+public class ActivitySplash extends Activity {
 
 
-    CircularImageView imagLogo;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        imagLogo = (CircularImageView)findViewById(R.id.imageView_logo);
-
-        final Animation animMovelaypot = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.animation);
-        animMovelaypot.setAnimationListener(this);
-        imagLogo.startAnimation(animMovelaypot);
-
 
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 Intent i = new Intent(ActivitySplash.this, ActivityNews.class);
-                Bundle bndlanimation = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.activity_open_translate, R.anim.activity_close_translate).toBundle();
+                Bundle bndlanimation = ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.fade_in, R.anim.fade_out).toBundle();
                 finish();
                 startActivity(i, bndlanimation);
 
             }
-        }, 3000);
-
-
+        }, 2000);
     }
 
-    @Override
-    public void onAnimationStart(Animation animation) {
-
-    }
-
-    @Override
-    public void onAnimationEnd(Animation animation) {
-
-    }
-
-    @Override
-    public void onAnimationRepeat(Animation animation) {
-
-    }
 }

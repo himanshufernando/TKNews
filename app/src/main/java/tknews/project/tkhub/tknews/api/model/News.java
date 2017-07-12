@@ -1,10 +1,12 @@
 package tknews.project.tkhub.tknews.api.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Himanshu on 5/23/2017.
  */
 
-public class News {
+public class News implements Serializable {
 
     public String newsID,newsTitelEnglish,newsTitelSinhala,newsContentEnglish,newsContentSinhala,newsResourceID,newsDate,newsLikeCount,newsCoverImage;
     public int languageStatus,newsStatus;

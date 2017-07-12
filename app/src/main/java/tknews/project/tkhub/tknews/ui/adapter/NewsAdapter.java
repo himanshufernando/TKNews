@@ -26,6 +26,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import tknews.project.tkhub.tknews.R;
 
+import tknews.project.tkhub.tknews.api.callbacks.OnNewsItemClickListener;
 import tknews.project.tkhub.tknews.api.model.News;
 
 
@@ -37,10 +38,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
     Context mContext;
     ArrayList<News> newsList;
-
-
-
-
+    private OnNewsItemClickListener onItemClickListener;
 
     public NewsAdapter(Context mContext, ArrayList<News> newslist) {
         this.mContext = mContext;
@@ -58,6 +56,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 
+        final News newsItem = newsList.get(position);
         holder.txtNewsDate.setText(newsList.get(position).getNewsDate());
         holder.txtNewsLikeCount.setText(newsList.get(position).getNewsLikeCount());
 
@@ -77,14 +76,21 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
             }
         });
+
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.onItemClick(newsItem);
+               // System.out.println("himasdsd :"+newsItem.getNewsTitelSinhala());
+            }
+        };
+        holder.imgNewsCover.setOnClickListener(listener);
     }
 
     @Override
     public int getItemCount() {
         return newsList.size();
     }
-
-
 
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -113,4 +119,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
 
     }
 
+    public void setOnItemClickListener(OnNewsItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
 }
